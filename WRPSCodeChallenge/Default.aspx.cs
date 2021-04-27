@@ -19,11 +19,15 @@ namespace WRPSCodeChallenge
             string return_val = "";
             try
             {
+                // convert the 2 strings to 2 lists with some clean up
                 char[] charsToTrim = {' ', '\r', '\n'};
                 string[] english = eng.Replace(" ", "").Replace("\r\n", " ").Replace("  ", " ").Trim(charsToTrim).Split(' ');
                 string[] spanish = spa.Replace(" ", "").Replace("\r\n", " ").Replace("  ", " ").Trim(charsToTrim).Split(' ');
-
-                Dictionary<string, string> spanish_dict = spanish.ToDictionary(key => key, value => value);
+                
+                // remove the duplicate before convert to dictionary
+                Dictionary<string, string> spanish_dict = spanish.Distinct().ToList().ToDictionary(key => key, value => "");
+                
+                // traverse all the words in the English and check if they are in the Spanish
                 foreach(string aword in english)
                 {
                     if (spanish_dict.ContainsKey(aword)){
@@ -48,6 +52,7 @@ namespace WRPSCodeChallenge
         {
             TextBoxEnglish.Text = "";
             TextBoxSpanish.Text = "";
+            LabelResult.Text = "";
         }
     }
 }
