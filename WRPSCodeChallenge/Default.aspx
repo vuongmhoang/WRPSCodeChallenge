@@ -7,11 +7,10 @@
         <hr />          
     </div>
     <div>
-
         English:<br />
-        <asp:TextBox ID="TextBoxEnglish" runat="server" TextMode="MultiLine" Rows="7" Width="100%"></asp:TextBox><br />
+        <asp:TextBox ID="TextBoxEnglish" runat="server" TextMode="MultiLine" Rows="7" Width="500px"></asp:TextBox><br />
         Spanish:<br />
-        <asp:TextBox ID="TextBoxSpanish" runat="server" TextMode="MultiLine" Rows="7" Width="100%"></asp:TextBox><br /><br />
+        <asp:TextBox ID="TextBoxSpanish" runat="server" TextMode="MultiLine" Rows="7" Width="500pxd"></asp:TextBox><br /><br />
         <asp:Button ID="ButtonSubmit" runat="server" Text="Submit"  OnClick="ButtonSubmit_Click"/>&nbsp;&nbsp;
         <asp:Button ID="ButtonReset" runat="server" Text="Reset"  OnClick="ButtonReset_Click"/><hr />
         Result:<br />
